@@ -1,0 +1,113 @@
+/* App.css */
+
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+h2, h3 {
+  color: #34495e;
+}
+
+/* Input Groups */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.input-group input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Error Messages */
+.error {
+  color: #e74c3c;
+  background-color: #fdecea;
+  border: 1px solid #e74c3c;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* Keys and Results Display */
+.keys-display,
+.encrypted-blocks,
+.decrypted-message,
+.raw-char-codes {
+  background-color: #ecf0f1;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.keys-display p,
+.encrypted-blocks p,
+.decrypted-message p,
+.raw-char-codes p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
