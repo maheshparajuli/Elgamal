@@ -1,113 +1,153 @@
-/* App.css */
-
-/* General Styling */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
+  padding: 20px;
   color: #333;
+  line-height: 1.6;
 }
 
 .app-container {
   max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Headings */
 h1 {
   text-align: center;
-  color: #2c3e50;
+  color: #4a4a4a;
+  margin-bottom: 30px;
 }
 
-h2, h3 {
-  color: #34495e;
-}
-
-/* Input Groups */
-.input-group {
+.input-group, .message-encryptor, .message-decryptor {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 20px;
   margin-bottom: 20px;
 }
 
-.input-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #555;
-}
-
-.input-group input,
-textarea {
+input, textarea {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin: 10px 0;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
 }
 
-/* Buttons */
+input:focus, textarea:focus {
+  border-color: #667eea;
+  outline: none;
+}
+
 button {
-  background-color: #3498db;
-  color: #fff;
+  background-color: #667eea;
+  color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: #764ba2;
+  transform: scale(1.05);
 }
 
-/* Error Messages */
 .error {
-  color: #e74c3c;
-  background-color: #fdecea;
-  border: 1px solid #e74c3c;
-  border-radius: 4px;
+  color: #d9534f;
+  background-color: #f2dede;
+  border: 1px solid #d9534f;
   padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.keys-display {
+  background-color: #e9ecef;
+  border-radius: 10px;
+  padding: 15px;
   margin-bottom: 20px;
 }
-
-/* Keys and Results Display */
-.keys-display,
-.encrypted-blocks,
-.decrypted-message,
-.raw-char-codes {
-  background-color: #ecf0f1;
-  padding: 15px;
-  margin-top: 20px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.keys-display p,
-.encrypted-blocks p,
-.decrypted-message p,
-.raw-char-codes p {
-  margin: 8px 0;
-  font-size: 14px;
-  color: #555;
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-textarea {
-  height: 80px;
-  resize: none;
+@keyframes slideIn {
+  from { 
+    opacity: 0; 
+    transform: translateX(-50px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0);
+  }
+}
+
+@keyframes shine {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+/* Animated Elements */
+.app-container {
+  animation: fadeIn 0.8s ease-out;
+}
+
+h1 {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 3s infinite linear;
+  background-size: 200px 100%;
+  background-position: -200px 0;
+  background-repeat: no-repeat;
+}
+
+.input-group, 
+.message-encryptor, 
+.message-decryptor,
+.keys-display {
+  animation: slideIn 0.6s ease-out;
+  transition: all 0.3s ease;
+}
+
+button {
+  animation: pulse 2s infinite;
+}
+
+.error {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Hover Effects */
+.input-group:hover, 
+.message-encryptor:hover, 
+.message-decryptor:hover,
+.keys-display:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
   .app-container {
     padding: 15px;
+    margin: 0 10px;
   }
-
-  button {
+  
+  input, textarea, button {
     width: 100%;
   }
 }
